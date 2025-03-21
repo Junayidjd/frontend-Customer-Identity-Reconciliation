@@ -94,7 +94,6 @@
 // };
 
 // export default IdentifyForm;
-
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -123,10 +122,16 @@ const IdentifyForm = ({ onResult, setLoading, setError, onClear }) => {
     try {
       setLoading(true);
       setError(null);
+
+      // Define the backend URL
+      const backendURL = "https://backend-assignment-moonrider.onrender.com";
+
+      // Make the API request
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/identify`, // Use environment variable
+        `${backendURL}/identify`, // Use the backend URL variable
         requestBody
       );
+
       onResult(response.data);
     } catch (err) {
       const errorMessage =

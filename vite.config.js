@@ -7,8 +7,8 @@
 //   server: {
 //     proxy: {
 //       "/identify": {
-//         // target: 'http://localhost:3000', // Backend server URL
-//         target: "https://backend-assignment-moonrider.onrender.com", // Backend server URL
+//         target: 'http://localhost:3000', // Backend server URL
+//         // target: "https://backend-assignment-moonrider.onrender.com", // Backend server URL
 //         changeOrigin: true,
 //       },
 //     },
