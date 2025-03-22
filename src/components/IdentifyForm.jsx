@@ -124,13 +124,16 @@ const IdentifyForm = ({ onResult, setLoading, setError, onClear }) => {
       setError(null);
 
       // Define the backend URL
-      const backendURL = "https://backend-assignment-moonrider.onrender.com";
+      // const backendURL = "https://backend-assignment-moonrider.onrender.com";
+
+      const response = await axios.post('/identify', requestBody);
+      onResult(response.data);
 
       // Make the API request
-      const response = await axios.post(
-        `${backendURL}/identify`, // Use the backend URL variable
-        requestBody
-      );
+      // const response = await axios.post(
+      //   `${backendURL}/identify`, // Use the backend URL variable
+      //   requestBody
+      // );
 
       onResult(response.data);
     } catch (err) {
